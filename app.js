@@ -38,11 +38,8 @@ app.post("/decrypt", (req, res) => {
 var tests = require('./routes/test.router')
 app.use(tests)
 
-app.get("/", (req, res) => {
-  res.json("Hello world.");
-});
 
-app.get('/home', function (req, res) {
+app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname+'/views/home.html'));
 });
 
