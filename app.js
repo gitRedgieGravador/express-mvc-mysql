@@ -12,6 +12,9 @@ app.use(
     extended: true
   })
 );
+const path = require("path");
+app.use("/static", express.static(path.join(__dirname, "views")));
+
 /*
 // For encrypted routes 
 var aes = new Encryptor()
@@ -40,7 +43,7 @@ app.get("/", (req, res) => {
 });
 
 app.get('/home', function (req, res) {
-  res.sendFile(path.join(__dirname+'/view/index.html'));
+  res.sendFile(path.join(__dirname+'/views/home.html'));
 });
 
 const PORT = process.env.PORT || 3000;
